@@ -1,14 +1,7 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-prettier",
-    "tslint-plugin-prettier",
-    "tslint-etc"
-  ],
+  "extends": "tslint:recommended",
   "rules": {
     "array-type": false,
-    "prettier": true,
-    "no-unused-declaration": true,
     "arrow-parens": false,
     "deprecation": {
       "severity": "warning"
