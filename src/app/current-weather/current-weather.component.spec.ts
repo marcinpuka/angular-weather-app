@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { CurrentWeatherComponent } from './current-weather.component';
+import { MaterialModule } from '../material.module';
 import { WeatherService } from '../weather/weather.service';
 import { WeatherServiceFake } from '../weather/weather.service.fake';
 import { injectSpy } from 'angular-unit-test-helper';
@@ -16,6 +17,7 @@ describe('CurrentWeatherComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [CurrentWeatherComponent],
+      imports: [MaterialModule],
       providers: [
         { provide: WeatherService, useValue: weatherServiceSpy }
       ]
