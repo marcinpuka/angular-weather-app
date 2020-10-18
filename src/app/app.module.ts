@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -7,11 +9,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
+import { CitySearchComponent } from './city-search/city-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    CitySearchComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,9 @@ import { NgModule } from '@angular/core';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

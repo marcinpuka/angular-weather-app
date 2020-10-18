@@ -26,6 +26,7 @@ export interface IWeatherService {
     city: string,
     country: string
   ): Observable<ICurrentWeather>;
+  getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather>;
 }
 
 
@@ -52,14 +53,31 @@ export class WeatherService implements IWeatherService {
     return kelvin * 9 / 5 - 459.67;
   }
 
-  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
-    const uriParams = new HttpParams()
-      .set('q', `${city},${country}`)
+  getCurrentWeather(search: string | number, country?: string) {
+    let uriParams = new HttpParams();
+    if (typeof search === 'string') {
+      uriParams = uriParams.set('q', country ? `${search},${country}` : search);
+    } else {
+      uriParams = uriParams.set('zip', 'search');
+    }
+    return this.getCurrentWeatherHelper(uriParams);
+
+  }
+
+  getCurrentWeatherHelper(uriParams: HttpParams): Observable<ICurrentWeather> {
+    uriParams = uriParams
       .set('appid', environment.appId);
     return this.httpClient
       .get<ICurrentWeatherData>(
         `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?`,
         { params: uriParams }
       ).pipe(map(data => this.transformToICurrentWeahter(data)));
+  }
+
+  getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather> {
+    const uriParams = new HttpParams()
+      .set('lat', coords.latitude.toString())
+      .set('long', coords.longitude.toString());
+    return this.getCurrentWeatherHelper(uriParams);
   }
 }
