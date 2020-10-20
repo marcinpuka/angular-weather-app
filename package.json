@@ -12,7 +12,8 @@
     "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test:a11y": "pa11y --standard Section508 http://localhost:4200"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
     "rxjs": "~6.5.4",
+    "subsink": "^1.0.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -41,6 +43,7 @@
     "@types/node": "^12.11.1",
     "angular-unit-test-helper": "^9.4.0",
     "codelyzer": "^5.1.2",
+    "http-server": "^0.12.3",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -48,6 +51,8 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "pa11y": "^5.3.0",
+    "pa11y-ci": "^2.4.0",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
