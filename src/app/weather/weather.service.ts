@@ -6,7 +6,6 @@ import { map, switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { PostalCodeService } from '../postal-code/postal-code.service';
 import { environment } from 'src/environments/environment';
-import { runInThisContext } from 'vm';
 
 interface ICurrentWeatherData {
   weather: [{
