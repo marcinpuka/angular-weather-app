@@ -1,0 +1,8 @@
+<div *ngIf="forecast$ | async as forecast">
+  <div *ngFor="let f of forecast.list">
+    <div>
+      <span>{{ f.dt * 1000 | date: "fullDate" }}</span>
+      <span> {{ f.main.temp }} </span>
+    </div>
+  </div>
+</div>

@@ -27,7 +27,13 @@ import { Component, OnInit } from '@angular/core';
             <app-current-weather></app-current-weather>
           </mat-card-content>
         </mat-card>
-        <div fxFlex></div>
+        <div fxFlex>
+          </div>
+      </div>
+      <div fxLayoutAlign="center">
+      <div fxLayout="row">
+          <app-weather-forcast></app-weather-forcast>
+        </div>
       </div>
     </div>
   `,
