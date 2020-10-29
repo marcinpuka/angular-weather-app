@@ -10,12 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { NgModule } from '@angular/core';
 import { CitySearchComponent } from './city-search/city-search.component';
+import { WeatherForcastComponent } from './weather-forcast/weather-forcast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentWeatherComponent,
-    CitySearchComponent
+    CitySearchComponent,
+    WeatherForcastComponent
   ],
   imports: [
     BrowserModule,

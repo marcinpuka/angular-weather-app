@@ -4,6 +4,7 @@
       {{ current.city }}, {{ current.country }}
     </div>
     <div fxFlex class="right mat-h3 no-margin">
+      {{ getTomorrow(current.date) }} <br />
       {{ current.date | date: "EEEE" }}<br />
       {{ current.date | date: "MMM d" }}{{ getOrdinal(current.date) }}
     </div>
@@ -23,7 +24,7 @@
     <div fxFlex class="right no-margin">
       <p class="mat-display-3">
         {{ current.temperature | number: "1.0-0" }}
-        <span class="mat-display-1 unit">°F</span>
+        <span class="mat-display-1 unit">°C</span>
       </p>
     </div>
   </div>
